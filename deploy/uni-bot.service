@@ -1,0 +1,19 @@
+[Unit]
+Description=University assignment reminder bot (Telegram + LINE)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=uni-bot
+Environment=UNI_BOT_DATA=/var/lib/uni-bot/data.json
+Environment=FREE_LLM_STATE=/var/lib/uni-bot/.state.json
+EnvironmentFile=-/opt/uni-bot/.env
+WorkingDirectory=/opt/uni-bot
+ExecStart=/opt/uni-bot/.venv/bin/python -m uni_bot
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

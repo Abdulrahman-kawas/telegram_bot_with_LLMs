@@ -1,0 +1,3 @@
+[submodule "free-llms"]
+	path = free-llms
+	url = https://github.com/Abdulrahman-kawas/free-llms.git

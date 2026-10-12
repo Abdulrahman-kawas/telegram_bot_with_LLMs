@@ -1,0 +1,3 @@
+-e ./free-llms
+python-telegram-bot[job-queue]>=21.0
+aiohttp>=3.9
